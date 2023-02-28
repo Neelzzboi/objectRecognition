@@ -1,0 +1,15 @@
+body {
+    background-color: aliceblue;
+    color:blue;
+}
+
+.heading {
+    width: 80%;
+    font: size 22px;
+}
+
+#camera, #result {
+    border: 2px solid black;
+    width: 350px;
+    height: 300px;
+}
