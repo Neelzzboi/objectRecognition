@@ -21,3 +21,19 @@ classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models
 function modelLoaded(){
     console.log("Model Loaded!");
 }
+
+function identifyimage(){
+    img = document.getElementById("captureImage");
+    classifier.classify(img, gotResult);
+}
+
+function gotResult(error, results){
+    if(error){
+        console.error(error);
+    }
+    else{
+        console.log(results);
+        document.getElementById("object_name").innerHTML = results[0].label;
+        document.getElementById("percentage").innerHTML = results[0].confidence.toFixed(3);
+    }
+}
